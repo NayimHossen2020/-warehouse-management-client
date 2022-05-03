@@ -17,11 +17,16 @@ const InventorySection = () => {
                 <p>Our Services</p>
                 <h1>What we manage</h1>
             </div>
-            <Row className='py-5'>
+            <Row className='py-3'>
                 {
                     services.map(service => <InventoryCart key={service.id} service={service} />)
                 }
             </Row>
+
+            <div className='d-flex align-items-center justify-content-center my-3'>
+                <p className='fw-bold mt-2'>See what we can offer just for your needs</p>
+                <button className='main-button mx-3 mb-1'>MORE SERVICES</button>
+            </div>
         </Container>
     );
 };

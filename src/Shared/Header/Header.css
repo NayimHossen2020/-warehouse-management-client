@@ -23,4 +23,5 @@
 
 .main-button:hover {
     background-color: white;
+    color: #0c2134 !important;
 }
