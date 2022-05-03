@@ -7,6 +7,7 @@ const SafeStorage = () => {
     return (
         <Container className='py-5'>
             <div className='inventory-title'>
+                <p>Our Specialty</p>
                 <h1>Why choice Us</h1>
             </div>
             <Row>
