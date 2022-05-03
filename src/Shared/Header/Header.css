@@ -10,7 +10,7 @@
     top: 0;
 }
 
-.sign-button {
+.main-button {
     background-color: #0c2134;
     border: 2px solid #0c2134;
     color: #ced0d2 !important;
@@ -21,6 +21,6 @@
     transition: .4s !important;
 }
 
-.sign-button:hover {
+.main-button:hover {
     background-color: white;
 }

@@ -1,0 +1,15 @@
+.inventory-title {
+    color: #0c2134;
+    font-weight: bold;
+    font-size: 3.2rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.inventory-sm-title {
+    text-align: center;
+    color: #0c2134;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px;
+}

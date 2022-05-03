@@ -19,7 +19,7 @@ const Header = () => {
                         <Nav.Link className='nav-link-Style' as={Link} to="/blog">Blog</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link className='sign-button' as={Link} to="/SignIn">SIGN IN</Nav.Link>
+                        <Nav.Link className='main-button' as={Link} to="/SignIn">SIGN IN</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

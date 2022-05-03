@@ -1,17 +1,18 @@
 import React from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import { FiPhoneOutgoing } from 'react-icons/fi';
 import './Banner.css';
 
 const Banner = () => {
     return (
         <Container>
-            <Row className='pt-5'>
+            <Row className='py-5'>
                 <Col sm={12} md={6} className="mb-3 d-flex justify-content-center align-items-center">
-                    <div>
+                    <div className='banner-text'>
                         <h1>We Store Anything You Care...Best Storage Services</h1>
                         <p>10% and 20% discounts on storage*</p>
-                        <h2>+91 8088848484</h2>
-                        <Button>GET A FREE QUOTE</Button>
+                        <h2 className='my-4'><FiPhoneOutgoing className='icon-style' /> +91 8088848484</h2>
+                        <button className='main-button'>GET A FREE QUOTE</button>
                     </div>
                 </Col>
                 <Col sm={12} md={6}>
