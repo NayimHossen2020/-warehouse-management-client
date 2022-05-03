@@ -5,6 +5,13 @@
     text-align: center;
 }
 
+.inventory-title h2 {
+    color: #0c2134;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+}
+
 .inventory-title p {
     text-align: center;
     color: #0c2134;
