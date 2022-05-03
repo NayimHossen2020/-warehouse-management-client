@@ -1,15 +1,13 @@
-.inventory-title {
+.inventory-title h1 {
     color: #0c2134;
     font-weight: bold;
-    font-size: 3.2rem;
     margin-bottom: 50px;
     text-align: center;
 }
 
-.inventory-sm-title {
+.inventory-title p {
     text-align: center;
     color: #0c2134;
-    font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
     margin: 0px;
 }
