@@ -1,0 +1,34 @@
+#hero-img-sofa {
+    transform: rotate(10deg) translate(20px, 30px);
+}
+
+#hero-img-tv {
+    transform: rotate(-10deg) translate(-10px, 10px);
+}
+
+#hero-img-bad {
+    transform: perspective(500px) translate3d(-50px, 10px, 3px);
+}
+
+#hero-img-camera {
+    transform: perspective(500px) translate3d(-20px, 0px, 3px)
+}
+
+#hero-img-lamp {
+    transform: perspective(500px) translate3d(-50px, 10px, 3px);
+}
+
+#hero-img-car {
+    transform: perspective(500px) translate3d(-20px, 0px, 3px);
+}
+
+#hero-img-files {
+    transform: perspective(500px) translate3d(20px, 0px, 3px);
+}
+
+#main-banner-img {
+    visibility: visible;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+}
