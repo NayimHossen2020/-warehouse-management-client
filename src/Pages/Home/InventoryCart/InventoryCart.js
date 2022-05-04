@@ -4,9 +4,11 @@ import './InventoryCart.css';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { FaUserCircle } from 'react-icons/fa';
 import { ImListNumbered } from 'react-icons/im';
+import { useNavigate } from 'react-router-dom';
 
 const InventoryCart = ({ service }) => {
-    const { name, img, price, quantity, supplier, description } = service;
+    const { id, name, img, price, quantity, supplier, description } = service;
+    const navigate = useNavigate();
 
     return (
         <Col sm={12} md={4}>
@@ -23,7 +25,7 @@ const InventoryCart = ({ service }) => {
                     </div>
                     <div className='d-flex justify-content-between align-items-center justify-content-center'>
                         <h4 className='fw-bold'><BsCurrencyDollar className='icon-style' />{price}</h4>
-                        <button className='main-button'>MANAGE</button>
+                        <button onClick={() => navigate(`/inventory/${id}`)} className='main-button'>MANAGE</button>
                     </div>
                 </Card.Body>
             </Card>

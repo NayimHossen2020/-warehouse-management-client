@@ -2,15 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './InventorySection.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import InventoryCart from '../InventoryCart/InventoryCart';
+import useServices from '../../../Hooks/useServices';
 
 const InventorySection = () => {
-    const [services, setServices] = useState([]);
+    const [services, setServices] = useServices();
 
-    useEffect(() => {
-        fetch('services.json')
-            .then(res => res.json())
-            .then(data => setServices(data));
-    }, []);
     return (
         <Container>
             <div className='inventory-title'>

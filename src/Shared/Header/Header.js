@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import CustomLink from '../../Hooks/CustomLink';
 
 const Header = () => {
     return (
@@ -13,10 +14,10 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
-                        <Nav.Link className='nav-link-Style' as={Link} to="/home">Home</Nav.Link>
-                        <Nav.Link className='nav-link-Style' as={Link} to="/about">About</Nav.Link>
-                        <Nav.Link className='nav-link-Style' as={Link} to="/services">Services</Nav.Link>
-                        <Nav.Link className='nav-link-Style' as={Link} to="/blogs">Blogs</Nav.Link>
+                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none' as={Link} to="/home">Home</CustomLink>
+                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none' as={Link} to="/about">About</CustomLink>
+                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none' as={Link} to="/services">Services</CustomLink>
+                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none' as={Link} to="/blogs">Blogs</CustomLink>
                     </Nav>
                     <Nav>
                         <Nav.Link className='main-button' as={Link} to="/SignIn">SIGN IN</Nav.Link>
