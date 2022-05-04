@@ -8,6 +8,7 @@ import SignIn from './Pages/Authentication/SignIn/SignIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
 import Blogs from './Pages/Blogs/Blogs';
 import Inventory from './Pages/Inventory/Inventory';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/inventory/:serviceId" element={<Inventory />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
