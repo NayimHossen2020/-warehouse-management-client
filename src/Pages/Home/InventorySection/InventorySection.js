@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './InventorySection.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import InventoryCart from '../InventoryCart/InventoryCart';
@@ -15,7 +15,7 @@ const InventorySection = () => {
             </div>
             <Row className='py-3'>
                 {
-                    services.map(service => <InventoryCart key={service.id} service={service} />)
+                    services?.map(service => <InventoryCart key={service.id} service={service} />)
                 }
             </Row>
 

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserAlt } from 'react-icons/fa';
 import './SignIn.css';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignIn = () => {
     const emailRef = useRef();
@@ -14,22 +15,28 @@ const SignIn = () => {
         console.log(email, password);
     }
     return (
-        <div onSubmit={handleSignIn} className="login-form signIn mb-5">
-            <form className='shadow-sm'>
-                <div className="avatar"><i><FaUserAlt /></i></div>
-                <h4 className="modal-title">Account SignIn</h4>
+        <div className="login-form total-form signIn mb-5 shadow-sm">
+            <div className="avatar"><i><FaUserAlt /></i></div>
+            <h4 className="modal-title">Account SignIn</h4>
+            <SocialLogin />
+            <form onSubmit={handleSignIn}>
                 <div className="form-group">
                     <input ref={emailRef} type="text" className="form-control" placeholder="Email" required="required" />
                 </div>
                 <div className="form-group">
                     <input ref={passwordRef} type="password" className="form-control" placeholder="Password" required="required" />
                 </div>
-                <div className="form-group small clearfix">
-                    <Link to="#" className="forgot-link">Forgot Password?</Link>
-                </div>
                 <input type="submit" className="main-button w-100" value="SIGN IN" />
+                <div className="form-group small clearfix">
+                    <div className="mt-3 fs-6 small">
+                        Don't have an account? <Link to="/signUp">Sign up</Link>
+                    </div>
+                    <div className="fs-6 small">
+                        <Link to="#" className="forgot-link">Forgot Password?</Link>
+                    </div>
+                </div>
+
             </form>
-            <div className="text-center fs-6 small">Don't have an account? <Link to="/signUp">Sign up</Link></div>
         </div>
     );
 };

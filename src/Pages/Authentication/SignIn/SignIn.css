@@ -11,13 +11,14 @@
     border-color: #4aba70;
 }
 
-.login-form {
-    width: 350px;
+.total-form {
+    max-width: 450px;
+    min-width: 250px;
     margin: 0 auto;
     padding: 30px 0;
 }
 
-.login-form form {
+.total-form {
     color: #434343;
     border-radius: 1px;
     margin-bottom: 15px;

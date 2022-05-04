@@ -14,10 +14,10 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
-                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none' as={Link} to="/home">Home</CustomLink>
-                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none' as={Link} to="/about">About</CustomLink>
-                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none' as={Link} to="/services">Services</CustomLink>
-                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none' as={Link} to="/blogs">Blogs</CustomLink>
+                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/home">Home</CustomLink>
+                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/about">About</CustomLink>
+                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/services">Services</CustomLink>
+                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/blogs">Blogs</CustomLink>
                     </Nav>
                     <Nav>
                         <Nav.Link className='main-button' as={Link} to="/SignIn">SIGN IN</Nav.Link>
