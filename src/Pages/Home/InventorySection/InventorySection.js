@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './InventorySection.css';
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import InventoryCart from '../InventoryCart/InventoryCart';
 
 const InventorySection = () => {
@@ -23,9 +23,16 @@ const InventorySection = () => {
                 }
             </Row>
 
-            <div className='d-flex align-items-center justify-content-center my-3'>
-                <p className='fw-bold mt-2'>See what we can offer just for your needs</p>
-                <button className='main-button mx-3 mb-1'>MORE SERVICES</button>
+            <div >
+                <Row className='d-flex align-items-center justify-content-center my-3'>
+                    <Col sm={12} md={7} className="d-flex justify-content-end">
+                        <p className='fw-bold mt-2'>See what we can offer just for your needs</p>
+                    </Col>
+
+                    <Col sm={12} md={5} className="d-flex justify-content-start">
+                        <button className='main-button mb-1'>MORE SERVICES</button>
+                    </Col>
+                </Row>
             </div>
         </Container>
     );

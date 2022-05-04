@@ -9,7 +9,7 @@ const WorkSystem = () => {
                 <h1>How it Works</h1>
             </div>
             <Row className='gx-4'>
-                <Col xs={6} md={3}>
+                <Col xs={6} md={3} className="mb-3">
                     <Card border="light">
                         <Card.Body>
                             <div>
@@ -22,7 +22,7 @@ const WorkSystem = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col xs={6} md={3}>
+                <Col xs={6} md={3} className="mb-3">
                     <Card border="light">
                         <Card.Body>
                             <div>
