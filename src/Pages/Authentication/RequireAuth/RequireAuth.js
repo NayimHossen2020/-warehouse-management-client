@@ -9,11 +9,16 @@ const RequireAuth = ({ children }) => {
     if (loading) {
         return <p>Loading....</p>
     }
+
+    if (error) {
+        console.log(error.message);
+    }
+
     if (!user) {
-        return <Navigate to="/login" state={{ from: location }} replace />;
+        return <Navigate to="/signIn" state={{ from: location }} replace />;
     }
 
     return children;
 }
 
-export default RequireAuth
+export default RequireAuth;

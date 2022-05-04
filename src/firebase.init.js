@@ -11,7 +11,7 @@ const firebaseConfig = {
     projectId: "warehouse-app-auth",
     storageBucket: "warehouse-app-auth.appspot.com",
     messagingSenderId: "151829063175",
-    appId: "1:151829063175:web:208eccffa72d0a11546ca2"
+    appId: "1:151829063175:web:208eccffa72d0a11546ca2",
 };
 
 // Initialize Firebase

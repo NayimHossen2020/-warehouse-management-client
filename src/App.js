@@ -9,6 +9,7 @@ import SignUp from './Pages/Authentication/SignUp/SignUp';
 import Blogs from './Pages/Blogs/Blogs';
 import Inventory from './Pages/Inventory/Inventory';
 import NotFound from './Pages/NotFound/NotFound';
+import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -18,7 +19,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/inventory/:serviceId" element={<Inventory />} />
+        <Route path="/inventory/:serviceId" element={
+          <RequireAuth>
+            <Inventory />
+          </RequireAuth>
+        } />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />

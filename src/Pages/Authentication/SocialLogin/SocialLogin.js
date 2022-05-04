@@ -3,10 +3,13 @@ import './SocialLogin.css';
 import { FcGoogle } from 'react-icons/fc';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     let showLoading;
     if (loading) {
@@ -19,16 +22,16 @@ const SocialLogin = () => {
     }
 
     if (user) {
-        navigate('/home')
+        navigate(from, { replace: true });
     }
 
     return (
         <div>
             <div>
                 {showLoading}
+                {showError}
                 <button onClick={() => signInWithGoogle()} className='w-100 social-button p-2 fw-bold'><FcGoogle className='me-2' />Google signIn</button>
             </div>
-            {showError}
             <div className='d-flex align-items-center'>
                 <div className='or-style'></div>
                 <p className='mt-2 m-2'>OR</p>
