@@ -10,7 +10,7 @@ const WorkSystem = () => {
             </div>
             <Row className='gx-4'>
                 <Col xs={6} md={3} className="mb-3">
-                    <Card border="light">
+                    <Card border="light" className="shadow-sm">
                         <Card.Body>
                             <div>
                                 <div className='d-flex justify-content-center'>
@@ -23,7 +23,7 @@ const WorkSystem = () => {
                     </Card>
                 </Col>
                 <Col xs={6} md={3} className="mb-3">
-                    <Card border="light">
+                    <Card border="light" className="shadow-sm">
                         <Card.Body>
                             <div>
                                 <div className='d-flex justify-content-center'>
@@ -36,7 +36,7 @@ const WorkSystem = () => {
                     </Card>
                 </Col>
                 <Col xs={6} md={3}>
-                    <Card border="light">
+                    <Card border="light" className="shadow-sm">
                         <Card.Body>
                             <div>
                                 <div className='d-flex justify-content-center'>
@@ -49,7 +49,7 @@ const WorkSystem = () => {
                     </Card>
                 </Col>
                 <Col xs={6} md={3}>
-                    <Card border="light">
+                    <Card border="light" className="shadow-sm">
                         <Card.Body>
                             <div>
                                 <div className='d-flex justify-content-center'>
