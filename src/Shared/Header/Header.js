@@ -24,13 +24,14 @@ const Header = () => {
                         <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/services">Services</CustomLink>
                         <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/blogs">Blogs</CustomLink>
                     </Nav>
-                    <Nav>{
-                        user
-                            ?
-                            <Nav.Link className='main-button' onClick={() => signOut(auth)}>SIGN OUT</Nav.Link>
-                            :
-                            <Nav.Link className='main-button' as={Link} to="/signIn">SIGN IN</Nav.Link>
-                    }
+                    <Nav>
+                        {
+                            user
+                                ?
+                                <Nav.Link className='main-button' onClick={() => signOut(auth)}>SIGN OUT</Nav.Link>
+                                :
+                                <Nav.Link className='main-button' as={Link} to="/signIn">SIGN IN</Nav.Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>

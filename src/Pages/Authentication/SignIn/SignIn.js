@@ -4,7 +4,10 @@ import { FaUserAlt } from 'react-icons/fa';
 import './SignIn.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { toast } from 'react-toastify';
+
 
 const SignIn = () => {
     const [
@@ -13,6 +16,8 @@ const SignIn = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending, resetPasswordError] = useSendPasswordResetEmail(auth);
     const emailRef = useRef();
     const passwordRef = useRef();
 
@@ -22,13 +27,13 @@ const SignIn = () => {
 
 
     let showLoading;
-    if (loading) {
+    if (loading || sending) {
         showLoading = <p>Loading...</p>;
     }
 
     let showError;
-    if (error) {
-        showError = <p className='text-danger'>Error: {error.message}</p>
+    if (error || resetPasswordError) {
+        showError = <p className='text-danger'>Error: {error?.message}</p>
     }
 
     if (user) {
@@ -40,6 +45,16 @@ const SignIn = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password);
+    };
+
+    const handleResetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast("Password Reset Email send");
+        } else {
+            toast("Please enter your email address");
+        }
     }
     return (
         <div className="login-form total-form signIn mb-5 shadow-sm">
@@ -48,7 +63,7 @@ const SignIn = () => {
             <SocialLogin />
             <form onSubmit={handleSignIn}>
                 <div className="form-group">
-                    <input ref={emailRef} type="text" className="form-control" placeholder="Email" required="required" />
+                    <input ref={emailRef} type="email" className="form-control" placeholder="Email" required="required" />
                 </div>
                 <div className="form-group">
                     <input ref={passwordRef} type="password" className="form-control" placeholder="Password" required="required" />
@@ -61,7 +76,7 @@ const SignIn = () => {
                         Don't have an account? <Link to="/signUp">Sign up</Link>
                     </div>
                     <div className="fs-6 small">
-                        <Link to="#" className="forgot-link">Forgot Password?</Link>
+                        <Link to="" onClick={handleResetPassword} className="forgot-link">Forgot Password?</Link>
                     </div>
                 </div>
 
