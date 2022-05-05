@@ -7,7 +7,7 @@ import { ImListNumbered } from 'react-icons/im';
 import { useNavigate } from 'react-router-dom';
 
 const InventoryCart = ({ service }) => {
-    const { id, name, img, price, quantity, supplier, description } = service;
+    const { _id, name, img, price, quantity, supplier, description } = service;
     const navigate = useNavigate();
 
     return (
@@ -25,7 +25,7 @@ const InventoryCart = ({ service }) => {
                     </div>
                     <div className='d-flex justify-content-between align-items-center justify-content-center'>
                         <h4 className='fw-bold'><BsCurrencyDollar className='icon-style' />{price}</h4>
-                        <button onClick={() => navigate(`/inventory/${id}`)} className='main-button'>MANAGE</button>
+                        <button onClick={() => navigate(`/inventory/${_id}`)} className='main-button'>MANAGE</button>
                     </div>
                 </Card.Body>
             </Card>

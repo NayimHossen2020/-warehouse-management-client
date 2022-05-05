@@ -15,7 +15,7 @@ const InventorySection = () => {
             </div>
             <Row className='py-3'>
                 {
-                    services?.map(service => <InventoryCart key={service.id} service={service} />)
+                    services?.map(service => <InventoryCart key={service._id} service={service} />)
                 }
             </Row>
 
