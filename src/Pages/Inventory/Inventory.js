@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import './Inventory.css';
 
 const Inventory = () => {
     const { serviceId } = useParams();
     const [service, setService] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
         const url = `http://localhost:5000/services/${serviceId}`
@@ -13,8 +15,10 @@ const Inventory = () => {
     }, [serviceId]);
 
     return (
-        <div style={{ height: "90vh" }}>
+        <div className='inventory'>
+            <button className='main-button' onClick={() => navigate('/manageInventory')}>Manage Inventory</button>
             <h2>This is Inventory: {service?.name}</h2>
+
         </div>
     );
 };

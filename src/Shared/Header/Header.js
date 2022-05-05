@@ -21,10 +21,17 @@ const Header = () => {
                     <Nav className="mx-auto">
                         <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/home">Home</CustomLink>
                         <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/about">About</CustomLink>
-                        <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/services">Services</CustomLink>
                         <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/blogs">Blogs</CustomLink>
+                        {
+                            user && <>
+                                <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/manageInventory">Manage Items</CustomLink>
+                                <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/addItems">Add Items</CustomLink>
+                                <CustomLink className='nav-link-Style px-3 py-2 text-decoration-none rounded' as={Link} to="/myItems">My Items</CustomLink>
+                            </>
+                        }
                     </Nav>
                     <Nav>
+
                         {
                             user
                                 ?

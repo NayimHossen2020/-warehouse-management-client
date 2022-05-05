@@ -1,11 +1,12 @@
 import React from 'react';
+import './About.css';
 
-const Blogs = () => {
+const About = () => {
     return (
         <div style={{ height: "90vh" }}>
-            <h2>This is blog page</h2>
+            <h2>This is about section</h2>
         </div>
     );
 };
 
-export default Blogs;
+export default About;
