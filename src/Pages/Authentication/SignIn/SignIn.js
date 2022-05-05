@@ -5,7 +5,7 @@ import './SignIn.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
+import auth from '../../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
 
 

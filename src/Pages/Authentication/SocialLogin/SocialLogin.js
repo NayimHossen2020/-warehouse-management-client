@@ -2,7 +2,7 @@ import React from 'react';
 import './SocialLogin.css';
 import { FcGoogle } from 'react-icons/fc';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
+import auth from '../../../Firebase/firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);

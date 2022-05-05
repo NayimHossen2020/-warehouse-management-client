@@ -4,7 +4,7 @@ import { FaUserAlt } from 'react-icons/fa';
 import './SignUp.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
+import auth from '../../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
 
 const SignUp = () => {
