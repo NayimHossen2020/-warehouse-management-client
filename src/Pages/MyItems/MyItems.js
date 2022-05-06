@@ -3,7 +3,7 @@ import './MyItems.css';
 
 const MyItems = () => {
     return (
-        <div>
+        <div style={{ height: "90vh" }}>
             <h2>this is all added my items</h2>
         </div>
     );

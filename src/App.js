@@ -26,9 +26,21 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/manageInventory" element={<ManageInventory />} />
-        <Route path="/addItems" element={<AddItems />} />
-        <Route path="/myItems" element={<MyItems />} />
+        <Route path="/manageInventory" element={
+          <RequireAuth>
+            <ManageInventory />
+          </RequireAuth>
+        } />
+        <Route path="/addItems" element={
+          <RequireAuth>
+            <AddItems />
+          </RequireAuth>
+        } />
+        <Route path="/myItems" element={
+          <RequireAuth>
+            <MyItems />
+          </RequireAuth>
+        } />
         <Route path="/inventory/:serviceId" element={
           <RequireAuth>
             <Inventory />
