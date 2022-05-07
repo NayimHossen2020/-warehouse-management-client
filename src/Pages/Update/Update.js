@@ -1,11 +1,15 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import auth from '../../Firebase/firebase.init';
 
 const Update = () => {
+    const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const { id } = useParams();
-    const onSubmit = async (updatedUser) => {
+    const onSubmit = async (updatedUser, e) => {
         const url = `http://localhost:5000/services/${id}`;
         await fetch(url, {
             method: "PUT",
@@ -16,12 +20,14 @@ const Update = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                toast('Item updated successful');
+                e.target.reset();
             });
 
     }
     return (
         <div className='w-50 mx-auto py-4'>
+            <h4>Update item={id}</h4>
             <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
                 <input className='mb-3' placeholder='Name' {...register("name")} required />
                 <input className='mb-3' placeholder='Price' type="number" {...register("price")} required />

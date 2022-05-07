@@ -5,7 +5,8 @@ import InventoryCart from '../InventoryCart/InventoryCart';
 import useServices from '../../../Hooks/useServices';
 
 const InventorySection = () => {
-    const [services, setServices] = useServices();
+    const [services] = useServices();
+    const sixItems = services.slice(0, 6);
 
     return (
         <Container>
@@ -15,7 +16,7 @@ const InventorySection = () => {
             </div>
             <Row className='py-3'>
                 {
-                    services?.map(service => <InventoryCart key={service._id} service={service} />)
+                    sixItems?.map(service => <InventoryCart key={service._id} service={service} />)
                 }
             </Row>
 
