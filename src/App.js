@@ -16,6 +16,7 @@ import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import AddItems from './Pages/AddItems/AddItems';
 import MyItems from './Pages/MyItems/MyItems';
 import About from './Pages/About/About';
+import Update from './Pages/Update/Update';
 
 function App() {
   return (
@@ -44,6 +45,11 @@ function App() {
         <Route path="/inventory/:serviceId" element={
           <RequireAuth>
             <Inventory />
+          </RequireAuth>
+        } />
+        <Route path="/update/:id" element={
+          <RequireAuth>
+            <Update />
           </RequireAuth>
         } />
         <Route path="/SignIn" element={<SignIn />} />

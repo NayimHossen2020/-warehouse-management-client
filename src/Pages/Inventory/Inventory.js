@@ -18,7 +18,6 @@ const Inventory = () => {
         <div className='inventory'>
             <button className='main-button' onClick={() => navigate('/manageInventory')}>Manage Inventory</button>
             <h2>This is Inventory: {service?.name}</h2>
-
         </div>
     );
 };
