@@ -1,6 +1,8 @@
+import { async } from '@firebase/util';
 import React, { useEffect, useRef, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import './Inventory.css';
 
 const Inventory = () => {
@@ -15,11 +17,62 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => setService(data));
     }, [serviceId]);
-    const { name, price, quantity, supplier, img, email } = service;
 
-    const handleRestock = (e) => {
+    const { _id, name, price, quantity, supplier, img, email } = service;
+
+    const updateInfo = {
+        name: name,
+        price: price,
+        quantity: quantity - 1,
+        supplier: supplier,
+        img: img,
+        email: email
+    };
+
+
+    const handleDeliver = async (updateInfo) => {
+        const url = `http://localhost:5000/services/${_id}`;
+        await fetch(url, {
+            method: "PUT",
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(updateInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast('One item deliver');
+            });
+    }
+
+    const handleRestock = async (e) => {
         e.preventDefault();
-        const restock = restockRef.current.value;
+        const restock = parseInt(restockRef.current.value);
+        console.log(typeof restock);
+
+        const updateInfo = {
+            name: name,
+            price: price,
+            quantity: quantity + restock,
+            supplier: supplier,
+            img: img,
+            email: email
+        };
+
+        const url = `http://localhost:5000/services/${_id}`;
+        await fetch(url, {
+            method: "PUT",
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(updateInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast('One item added');
+            });
         console.log(restock);
     }
 
@@ -35,7 +88,7 @@ const Inventory = () => {
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">Name-{name}</li>
                                 <li className="list-group-item">Price-{price}</li>
-                                <li className="list-group-item">Quantity-{quantity}</li>
+                                <li className="list-group-item">Quantity-{quantity === 0 ? "Stock out" : quantity}</li>
                                 <li className="list-group-item">Supplier-{supplier}</li>
                                 <li className="list-group-item">Email-{email}</li>
                             </ul>
@@ -44,7 +97,7 @@ const Inventory = () => {
                     <Col sm={12} md={3}>
                         <div className="row d-flex justify-content-center align-items-center">
                             <div>
-                                <button className='main-button'>Deliver</button>
+                                <button className='main-button' onClick={() => handleDeliver(updateInfo)}>Deliver</button>
                                 <div>
                                     <form onSubmit={handleRestock}>
                                         <input className='w-50 mt-5 mb-2 rounded' type="number" ref={restockRef} placeholder='Restock' required />

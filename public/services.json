@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "name": "Household Storage",
         "email": "nayimh2017@gmail.com",
         "price": "300",
@@ -10,17 +9,15 @@
         "img": "https://safestorage.in/assets/new_design_css/img/sofa.png"
     },
     {
-        "id": 2,
         "name": "WHEEL ALIGNMENT",
         "email": "nayimh2017@gmail.com",
         "price": "100",
         "quantity": "4",
         "supplier": "Smit jonson",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://safestorage.in/assets/new_design_css/img/bad.png"
+        "img": "https://safestorage.in/assets/new_design_css/img/bad.pn"
     },
     {
-        "id": 3,
         "name": "OIL CHANGING",
         "email": "nayimh2015@gmail.com",
         "price": "150",
@@ -30,7 +27,6 @@
         "img": "https://safestorage.in/assets/new_design_css/img/tv.png"
     },
     {
-        "id": 4,
         "name": "BRAKE REPARING",
         "email": "nayimh2015@gmail.com",
         "price": "180",
@@ -40,7 +36,6 @@
         "img": "https://safestorage.in/assets/new_design_css/img/files.png"
     },
     {
-        "id": 5,
         "name": "WASH AND GLASSING",
         "email": "nayimh2017@gmail.com",
         "price": "100",
@@ -50,7 +45,6 @@
         "img": "https://safestorage.in/upload/home/storage_type_images/service44.png"
     },
     {
-        "id": 6,
         "name": "COMPLETE ANALYSIS",
         "email": "nayimh2015@gmail.com",
         "price": "300",
