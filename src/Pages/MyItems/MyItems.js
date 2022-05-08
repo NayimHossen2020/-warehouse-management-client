@@ -6,7 +6,7 @@ import './MyItems.css';
 import { useNavigate } from "react-router-dom";
 import { signOut } from 'firebase/auth';
 import SingleMyItems from '../../Pages/SingleMyItems/SingleMyItems';
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const MyItems = () => {
@@ -17,7 +17,7 @@ const MyItems = () => {
     useEffect(() => {
         const getServices = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/myItems?email=${email}`;
+            const url = `https://powerful-island-24401.herokuapp.com/myItems?email=${email}`;
 
             try {
                 const { data } = await axiosPrivate.get(url);
@@ -34,12 +34,14 @@ const MyItems = () => {
     }, [user]);
 
     return (
-        <div style={{ height: "90vh" }}>
+        <div>
             <PageTitle title="MyItems"></PageTitle>
             <Container>
-                {
-                    items.map(item => <SingleMyItems key={item._id} item={item}></SingleMyItems>)
-                }
+                <Row>
+                    {
+                        items.map(singItem => <SingleMyItems singleItem={singItem._id} singItem={singItem}></SingleMyItems>)
+                    }
+                </Row>
             </Container>
         </div>
     );

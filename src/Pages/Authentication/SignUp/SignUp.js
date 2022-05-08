@@ -25,7 +25,6 @@ const SignUp = () => {
     const ConfirmPasswordRef = useRef();
     const navigate = useNavigate();
 
-
     let showLoading;
     if (loading || updating) {
         showLoading = <p>Loading...</p>;
@@ -48,8 +47,17 @@ const SignUp = () => {
         const password = passwordRef.current.value;
         const confirmPassword = ConfirmPasswordRef.current.value;
 
-        await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName: name });
+        if (password === confirmPassword) {
+            await createUserWithEmailAndPassword(email, password);
+            await updateProfile({ displayName: name });
+            event.target.reset();
+        }
+        else {
+            toast("Password not matched")
+            event.target.reset();
+        }
+
+
     }
     return (
         <div className="login-form total-form signIn mb-5 shadow-sm">

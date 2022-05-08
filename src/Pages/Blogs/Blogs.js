@@ -7,7 +7,7 @@ const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch(`blogs.json`)
+        fetch(`https://powerful-island-24401.herokuapp.com/blogs`)
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, []);
@@ -16,7 +16,7 @@ const Blogs = () => {
             <PageTitle title="Blogs"></PageTitle>
             <h1 className='text-center mt-2 mb-3'>Blogs</h1>
             {
-                blogs.map(blog => <Blog key={blog.id} blog={blog}></Blog>)
+                blogs.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
             }
         </Container>
     );

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import useServices from '../../Hooks/useServices';
 
 const ManageEachItem = ({ service }) => {
-    const { _id, name, price, quantity, supplier, img } = service;
+    const { _id, name, price, quantity, supplier, img, email } = service;
     const [services, setServices] = useServices();
     const navigate = useNavigate();
 
@@ -25,13 +26,20 @@ const ManageEachItem = ({ service }) => {
     };
 
     return (
-        <div className='d-flex'>
-            <h4>{name}</h4>
-            <div>
-                <button onClick={() => navigate(`/update/${_id}`)}>Update</button>
-                <button onClick={() => deleteSingleItem(_id)}>Delete</button>
-            </div>
-        </div >
+        <Col sm={12} md={3} className='d-flex'>
+            <Card className="p-3 mb-3 rounded shadow-sm">
+                <Card.Img style={{ width: '150px', height: "150px" }} variant="top" src={img} />
+                <Card.Body>
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Text>Email: {email}</Card.Text>
+                    <Card.Text>Price: {price}</Card.Text>
+                    <Card.Text>Quantity: {quantity}</Card.Text>
+                    <Card.Text>Supplier: {supplier}</Card.Text>
+                    <button className='main-button me-2' onClick={() => navigate(`/update/${_id}`)}>Update</button>
+                    <button className='main-button' onClick={() => deleteSingleItem(_id)}>Delete</button>
+                </Card.Body>
+            </Card>
+        </Col >
     );
 };
 

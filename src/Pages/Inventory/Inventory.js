@@ -1,4 +1,3 @@
-import { async } from '@firebase/util';
 import React, { useEffect, useRef, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -12,7 +11,7 @@ const Inventory = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const url = `http://localhost:5000/services/${serviceId}`
+        const url = `https://powerful-island-24401.herokuapp.com/services/${serviceId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data));
@@ -33,7 +32,7 @@ const Inventory = () => {
 
 
     const handleDeliver = async (updateInfo) => {
-        const url = `http://localhost:5000/services/${serviceId}`;
+        const url = `https://powerful-island-24401.herokuapp.com/services/${serviceId}`;
         await fetch(url, {
             method: "PUT",
             headers: {
@@ -63,7 +62,7 @@ const Inventory = () => {
             description: description
         };
 
-        const url = `http://localhost:5000/services/${serviceId}`;
+        const url = `https://powerful-island-24401.herokuapp.com/services/${serviceId}`;
         await fetch(url, {
             method: "PUT",
             headers: {
