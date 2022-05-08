@@ -14,7 +14,7 @@ const InventoryCart = ({ service }) => {
         <Col sm={12} md={4}>
             <Card border="light" style={{ borderColor: "none" }} className='mb-3 shadow-sm'>
                 <div className='service-img me-auto p-3'>
-                    <img src={img} alt="" />
+                    <img className="img-fluid" src={img} alt="" />
                 </div>
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>

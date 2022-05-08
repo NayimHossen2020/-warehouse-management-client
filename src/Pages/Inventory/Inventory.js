@@ -18,20 +18,22 @@ const Inventory = () => {
             .then(data => setService(data));
     }, [serviceId]);
 
-    const { _id, name, price, quantity, supplier, img, email } = service;
+    const { _id, name, price, quantity, supplier, img, email, description } = service;
 
     const updateInfo = {
+        _id: _id,
         name: name,
         price: price,
         quantity: quantity - 1,
         supplier: supplier,
         img: img,
-        email: email
+        email: email,
+        description: description
     };
 
 
     const handleDeliver = async (updateInfo) => {
-        const url = `http://localhost:5000/services/${_id}`;
+        const url = `http://localhost:5000/services/${serviceId}`;
         await fetch(url, {
             method: "PUT",
             headers: {
@@ -41,26 +43,27 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                setService(updateInfo)
                 toast('One item deliver');
             });
     }
 
     const handleRestock = async (e) => {
         e.preventDefault();
-        const restock = parseInt(restockRef.current.value);
-        console.log(typeof restock);
+        const restock = parseFloat(restockRef.current.value);
 
         const updateInfo = {
+            _id: _id,
             name: name,
             price: price,
             quantity: quantity + restock,
             supplier: supplier,
             img: img,
-            email: email
+            email: email,
+            description: description
         };
 
-        const url = `http://localhost:5000/services/${_id}`;
+        const url = `http://localhost:5000/services/${serviceId}`;
         await fetch(url, {
             method: "PUT",
             headers: {
@@ -70,8 +73,9 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                toast('One item added');
+                setService(updateInfo)
+                toast('Quantity Updated');
+                e.target.reset();
             });
         console.log(restock);
     }
