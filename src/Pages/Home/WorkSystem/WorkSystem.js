@@ -14,7 +14,7 @@ const WorkSystem = () => {
                         <Card.Body>
                             <div>
                                 <div className='d-flex justify-content-center'>
-                                    <img className='img-fluid' style={{ height: "100px" }} src="https://safestorage.in/upload/home/how_it_work/flow1.png" alt="" />
+                                    <img className='img-fluid' style={{ height: "100px" }} src="https://i.ibb.co/JkNMpfR/1-box-removebg-preview.png" alt="" />
                                 </div>
                                 <h1 className='text-center fw-bold py-1 text-style'>01</h1>
                                 <h5 className='text-center fw-bold'>We pack assets at your home</h5>
@@ -27,7 +27,7 @@ const WorkSystem = () => {
                         <Card.Body>
                             <div>
                                 <div className='d-flex justify-content-center'>
-                                    <img className='img-fluid' style={{ height: "100px" }} src="https://safestorage.in/upload/home/how_it_work/flow2.png" alt="" />
+                                    <img className='img-fluid' style={{ height: "100px" }} src="https://i.ibb.co/Y7w6vkk/picup-removebg-preview.png" alt="" />
                                 </div>
                                 <h1 className='text-center fw-bold py-1 text-style'>02</h1>
                                 <h5 className='text-center fw-bold'>We pick up from your door step</h5>
@@ -40,7 +40,7 @@ const WorkSystem = () => {
                         <Card.Body>
                             <div>
                                 <div className='d-flex justify-content-center'>
-                                    <img className='img-fluid' style={{ height: "100px" }} src="https://safestorage.in/upload/home/how_it_work/flow3.png" alt="" />
+                                    <img className='img-fluid' style={{ height: "100px" }} src="https://i.ibb.co/nzhmGbr/images-removebg-preview.png" alt="" />
                                 </div>
                                 <h1 className='text-center fw-bold py-1 text-style'>03</h1>
                                 <h5 className='text-center fw-bold'>We store in our warehouse</h5>
@@ -53,7 +53,7 @@ const WorkSystem = () => {
                         <Card.Body>
                             <div>
                                 <div className='d-flex justify-content-center'>
-                                    <img className='img-fluid' style={{ height: "100px" }} src="https://safestorage.in/upload/home/how_it_work/flow4.png" alt="" />
+                                    <img className='img-fluid' style={{ height: "100px" }} src="https://i.ibb.co/1TCSdv0/deliver-removebg-preview.png" alt="" />
                                 </div>
                                 <h1 className='text-center fw-bold py-1 text-style'>04</h1>
                                 <h5 className='text-center fw-bold'>We deliver when you need</h5>

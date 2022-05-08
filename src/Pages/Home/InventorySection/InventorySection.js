@@ -3,8 +3,10 @@ import './InventorySection.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import InventoryCart from '../InventoryCart/InventoryCart';
 import useServices from '../../../Hooks/useServices';
+import { useNavigate } from 'react-router-dom';
 
 const InventorySection = () => {
+    const navigate = useNavigate();
     const [services] = useServices();
     const sixItems = services.slice(0, 6);
 
@@ -27,7 +29,7 @@ const InventorySection = () => {
                     </Col>
 
                     <Col sm={12} md={5} className="d-flex justify-content-start">
-                        <button className='main-button mb-1'>MORE SERVICES</button>
+                        <button onClick={() => navigate('/manageInventory')} className='main-button mb-1'>MORE SERVICES</button>
                     </Col>
                 </Row>
             </div>

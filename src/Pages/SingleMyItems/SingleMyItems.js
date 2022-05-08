@@ -12,13 +12,12 @@ const SingleMyItems = ({ singItem }) => {
 
         const proceed = window.confirm("Are you sure?");
         if (proceed) {
-            const url = `http://localhost:5000/services/${id}`;
+            const url = `https://powerful-island-24401.herokuapp.com/services/${id}`;
             await fetch(url, {
                 method: "DELETE"
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     const remaining = services.filter(ser => ser._id !== id);
                     setServices(remaining);
                 });

@@ -1,4 +1,3 @@
-import axiosPrivate from '../../api/axiosPrivate';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
@@ -8,6 +7,7 @@ import { signOut } from 'firebase/auth';
 import SingleMyItems from '../../Pages/SingleMyItems/SingleMyItems';
 import { Container, Row } from "react-bootstrap";
 import PageTitle from '../../Shared/PageTitle/PageTitle';
+import axiosPrivate from '../../api/axiosPrivate';
 
 const MyItems = () => {
     const navigate = useNavigate();
@@ -37,6 +37,7 @@ const MyItems = () => {
         <div>
             <PageTitle title="MyItems"></PageTitle>
             <Container>
+                <h2 className='text-center mb-3 fw-bold'>My Items</h2>
                 <Row>
                     {
                         items.map(singItem => <SingleMyItems singleItem={singItem._id} singItem={singItem}></SingleMyItems>)

@@ -48,7 +48,7 @@ const SignIn = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/signIn', { email })
+        const { data } = await axios.post('https://powerful-island-24401.herokuapp.com/signIn', { email })
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
     };

@@ -11,7 +11,7 @@ const AddItems = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, e) => {
-        const url = `http://localhost:5000/services`;
+        const url = `https://powerful-island-24401.herokuapp.com/services`;
 
         axios.post(url, data)
             .then(res => {
@@ -26,14 +26,15 @@ const AddItems = () => {
     return (
         <div className='w-50 mx-auto py-4'>
             <PageTitle title="Add Item"></PageTitle>
-            <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
-                <input className='mb-3' placeholder='name' {...register("name")} required />
-                <input className='mb-3' placeholder='email' {...register("email")} value={user.email} readOnly required />
-                <input className='mb-3' placeholder='Price' type="number" {...register("price")} required />
-                <input className='mb-3' placeholder='quantity' type="number" {...register("quantity")} required />
-                <input className='mb-3' placeholder='supplier' {...register("supplier")} required />
-                <textarea className='mb-3' placeholder='description' {...register("description")} required />
-                <input className='mb-3' placeholder='img' {...register("img")} required />
+            <h2 className='text-center mb-3'>Add Item</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column main-form shadow-sm">
+                <input className='mb-3 input-filed-style' placeholder='name' {...register("name")} required />
+                <input className='mb-3 input-filed-style' placeholder='email' {...register("email")} value={user.email} readOnly required />
+                <input className='mb-3 input-filed-style' placeholder='Price' type="number" {...register("price")} required />
+                <input className='mb-3 input-filed-style' placeholder='quantity' type="number" {...register("quantity")} required />
+                <input className='mb-3 input-filed-style' placeholder='supplier' {...register("supplier")} required />
+                <textarea className='mb-3 input-filed-style' placeholder='description' {...register("description")} required />
+                <input className='mb-3 input-filed-style' placeholder='img' {...register("img")} required />
                 <input className='main-button' type="submit" value="Add Item" />
             </form>
         </div>

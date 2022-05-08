@@ -12,9 +12,9 @@ const Blogs = () => {
             .then(data => setBlogs(data))
     }, []);
     return (
-        <Container className='my-5'>
+        <Container className='my-3'>
             <PageTitle title="Blogs"></PageTitle>
-            <h1 className='text-center mt-2 mb-3'>Blogs</h1>
+            <h1 className='text-center mb-3 fw-bold'>Blogs</h1>
             {
                 blogs.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
             }

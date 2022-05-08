@@ -12,9 +12,9 @@ const ManageInventory = () => {
     return (
         <Container>
             <PageTitle title="Manage Items"></PageTitle>
-            <div className='d-flex justify-content-center align-items-center my-4'>
+            <div className='d-flex justify-content-center align-items-center my-3'>
                 <div>
-                    <h2 className='my-2'>Manage Inventory</h2>
+                    <h2 className='mb-3 fw-bold'>Manage Inventory</h2>
                     <button className='main-button text-center' onClick={() => navigate('/addItems')}>Add new item</button>
                 </div>
             </div>

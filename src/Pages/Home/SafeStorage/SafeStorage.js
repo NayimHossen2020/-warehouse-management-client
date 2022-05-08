@@ -13,7 +13,7 @@ const SafeStorage = () => {
             <Row>
                 <Col sm={12} md={5}>
                     <div>
-                        <img className='img-fluid' src="https://safestorage.in/assets/new_design_css/img/safe-storage.png" alt="" />
+                        <img className='img-fluid' src="https://i.ibb.co/Y2D0Yv7/istockphoto-866419560-170667a-removebg-preview.png" alt="" />
                     </div>
                 </Col>
                 <Col sm={12} md={7}>

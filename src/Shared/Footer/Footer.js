@@ -9,7 +9,7 @@ const Footer = () => {
                 <Row className="d-flex align-items-center mb-3 wow fadeInUp">
                     <Col sm={12} md={3}>
                         <div className='d-flex justify-content-center'>
-                            <img src="https://safestorage.in/assets/new_design_css/img/logo.png" className="img-fluid" />
+                            <img src="https://i.ibb.co/Cscq990/logo.png" className="img-fluid" />
                         </div>
                     </Col>
                     <Col sm={12} md={9}>

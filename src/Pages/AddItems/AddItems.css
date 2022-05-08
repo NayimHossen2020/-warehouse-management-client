@@ -1,0 +1,12 @@
+.input-filed-style {
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 3px;
+    font-weight: bold;
+}
+
+.main-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+}

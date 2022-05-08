@@ -76,7 +76,6 @@ const Inventory = () => {
                 toast('Quantity Updated');
                 e.target.reset();
             });
-        console.log(restock);
     }
 
     return (
