@@ -5,25 +5,13 @@ import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import axios from 'axios';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const AddItems = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, e) => {
         const url = `http://localhost:5000/services`;
-
-        // fetch(url, {
-        //     method: "POST",
-        //     headers: {
-        //         'content-type': "application/json"
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         toast("Item added successful");
-        //         e.target.reset();
-        //     })
 
         axios.post(url, data)
             .then(res => {
@@ -37,6 +25,7 @@ const AddItems = () => {
 
     return (
         <div className='w-50 mx-auto py-4'>
+            <PageTitle title="Add Item"></PageTitle>
             <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
                 <input className='mb-3' placeholder='name' {...register("name")} required />
                 <input className='mb-3' placeholder='email' {...register("email")} value={user.email} readOnly required />

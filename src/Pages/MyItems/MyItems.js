@@ -6,6 +6,8 @@ import './MyItems.css';
 import { useNavigate } from "react-router-dom";
 import { signOut } from 'firebase/auth';
 import SingleMyItems from '../../Pages/SingleMyItems/SingleMyItems';
+import { Container } from "react-bootstrap";
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const MyItems = () => {
     const navigate = useNavigate();
@@ -33,9 +35,12 @@ const MyItems = () => {
 
     return (
         <div style={{ height: "90vh" }}>
-            {
-                items.map(item => <SingleMyItems key={item._id} item={item}></SingleMyItems>)
-            }
+            <PageTitle title="MyItems"></PageTitle>
+            <Container>
+                {
+                    items.map(item => <SingleMyItems key={item._id} item={item}></SingleMyItems>)
+                }
+            </Container>
         </div>
     );
 };

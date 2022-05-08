@@ -6,6 +6,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
+import PageTitle from '../../../Shared/PageTitle/PageTitle';
 
 const SignUp = () => {
     const [agree, setAgree] = useState(false);
@@ -52,6 +53,7 @@ const SignUp = () => {
     }
     return (
         <div className="login-form total-form signIn mb-5 shadow-sm">
+            <PageTitle title="Sign Up"></PageTitle>
             <div className="avatar"><i className="material-icons"><FaUserAlt /></i></div>
             <h4 className="modal-title">Create an account</h4>
             <SocialLogin />

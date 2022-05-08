@@ -14,7 +14,7 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" className="header-style">
             <Container>
                 <Navbar.Brand as={Link} to="/">
-                    <img src="https://safestorage.in/assets/new_design_css/img/logo.png" alt="" />
+                    <img src="https://i.ibb.co/Cscq990/logo.png" className='img-fluid' style={{ width: "250px" }} alt="logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

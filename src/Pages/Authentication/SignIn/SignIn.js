@@ -8,6 +8,7 @@ import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import PageTitle from '../../../Shared/PageTitle/PageTitle';
 
 
 const SignIn = () => {
@@ -63,6 +64,7 @@ const SignIn = () => {
     }
     return (
         <div className="login-form total-form signIn mb-5 shadow-sm">
+            <PageTitle title="Sign In"></PageTitle>
             <div className="avatar"><i><FaUserAlt /></i></div>
             <h4 className="modal-title">Account SignIn</h4>
             <SocialLogin />
