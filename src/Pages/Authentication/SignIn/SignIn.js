@@ -7,8 +7,8 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 import PageTitle from '../../../Shared/PageTitle/PageTitle';
+import useToken from '../../../Hooks/useToken';
 
 
 const SignIn = () => {
@@ -20,6 +20,7 @@ const SignIn = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail, sending, resetPasswordError] = useSendPasswordResetEmail(auth);
+    const [token] = useToken(user);
     const emailRef = useRef();
     const passwordRef = useRef();
 
@@ -38,8 +39,8 @@ const SignIn = () => {
         showError = <p className='text-danger'>Error: {error?.message}</p>
     }
 
-    if (user) {
-        // navigate(from, { replace: true });
+    if (token) {
+        navigate(from, { replace: true });
     }
 
     const handleSignIn = async (event) => {
@@ -48,9 +49,7 @@ const SignIn = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('https://powerful-island-24401.herokuapp.com/signIn', { email })
-        localStorage.setItem('accessToken', data.accessToken);
-        navigate(from, { replace: true });
+
     };
 
     const handleResetPassword = async () => {

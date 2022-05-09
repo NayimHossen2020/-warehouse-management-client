@@ -16,7 +16,7 @@ const MyItems = () => {
 
     useEffect(() => {
         const getServices = async () => {
-            const email = user.email;
+            const email = user?.email;
             const url = `https://powerful-island-24401.herokuapp.com/myItems?email=${email}`;
 
             try {

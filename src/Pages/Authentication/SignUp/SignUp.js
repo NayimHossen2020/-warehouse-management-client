@@ -7,6 +7,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../../Firebase/firebase.init';
 import { toast } from 'react-toastify';
 import PageTitle from '../../../Shared/PageTitle/PageTitle';
+import useToken from '../../../Hooks/useToken';
 
 const SignUp = () => {
     const [agree, setAgree] = useState(false);
@@ -18,7 +19,7 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
-
+    const [token] = useToken(user);
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -35,7 +36,7 @@ const SignUp = () => {
         showError = <p className='text-danger'>Error: {error?.message}</p>
     }
 
-    if (user) {
+    if (token) {
         toast('Your account created successful');
         navigate('/home');
     }

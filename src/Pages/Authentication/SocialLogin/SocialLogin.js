@@ -4,9 +4,11 @@ import { FcGoogle } from 'react-icons/fc';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../Hooks/useToken';
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
+    const [token] = useToken(user);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -21,7 +23,7 @@ const SocialLogin = () => {
         showError = <p className='text-danger'>Error: {error.message}</p>
     }
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
